@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    tools:context=".Activity.Rating_Office">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:background="#ffffff"
+        android:layout_height="@dimen/_300sdp">
+        <ProgressBar
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerInParent="true"
+            android:id="@+id/progross"
+            android:visibility="gone"
+
+            />
+
+
+
+        <!--<androidx.appcompat.widget.AppCompatEditText-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/_30sdp"-->
+        <!--android:layout_below="@+id/ratingBar"-->
+        <!--android:layout_marginRight="@dimen/_50sdp"-->
+        <!--android:layout_marginLeft="@dimen/_50sdp"-->
+        <!--android:hint="@string/writecomment"-->
+        <!--android:gravity="start"-->
+        <!--android:textColor="#e4e4e4"-->
+        <!--android:textStyle="bold"-->
+        <!--android:padding="@dimen/_10sdp"-->
+        <!--android:textColorHint="#e4e4e4"-->
+        <!--android:background="@drawable/bc_edittext_rating"-->
+        <!--/>-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/fab"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp">
+
+
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/Cities_Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:layout_marginLeft="@dimen/_13sdp"
+                android:layout_marginRight="@dimen/_13sdp"
+                android:spinnerMode="dialog"
+                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                app:backgroundTint="#919191">
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textColor="#706a6a"
+                  android:paddingLeft="@dimen/_5sdp"
+                  android:text="12312"
+                  android:paddingRight="@dimen/_5sdp"
+                  android:layout_below="@+id/Cities_Spinner"
+                  android:background="@drawable/bcwdittext"
+                  android:layout_marginTop="@dimen/_20sdp"
+                  android:id="@+id/T_Date"
+                  android:textStyle="bold"
+                  />
+
+
+            </androidx.appcompat.widget.AppCompatSpinner>
+
+        </RelativeLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/bookunit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            app:backgroundTint="#0691de"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:src="@drawable/add" />
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/circle_shape">
+        <!--<ImageView-->
+        <!--android:layout_width="@dimen/_50sdp"-->
+        <!--android:layout_height="@dimen/_50sdp"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:src="@drawable/ic_add" />-->
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

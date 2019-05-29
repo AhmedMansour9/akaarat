@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    tools:context=".Activity.Rating_Office">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:layout_marginBottom="@dimen/_50sdp"
+        android:layout_height="@dimen/_250sdp">
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:progressBackgroundTint="@color/yellow"
+            android:progressTint="@color/yellow"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:stepSize="1.0"
+            android:layout_centerHorizontal="true"
+            android:numStars="5"
+            android:secondaryProgressTint="@color/yellow"
+            android:rating="1" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_120sdp"
+            android:layout_below="@+id/ratingBar"
+            android:layout_marginRight="@dimen/_50sdp"
+            android:layout_marginLeft="@dimen/_50sdp"
+            android:hint="@string/writecomment"
+            android:gravity="start"
+            android:textColor="#e4e4e4"
+            android:textStyle="bold"
+            android:padding="@dimen/_10sdp"
+            android:textColorHint="#e4e4e4"
+            android:background="@drawable/bc_edittext_rating"
+            />
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_260sdp"
+        android:background="@drawable/circle_shape">
+        <ImageView
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_add_rate"
+            />
+
+
+    </RelativeLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:backgroundTint="#0691de"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:src="@drawable/add" />
+
+
+</RelativeLayout>

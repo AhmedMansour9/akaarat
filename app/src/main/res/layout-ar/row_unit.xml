@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/_10sdp"
+    android:layout_marginTop="@dimen/_10sdp"
+    app:cardBackgroundColor="@android:color/white"
+    android:layout_marginLeft="@dimen/_3sdp"
+    android:layout_marginRight="@dimen/_3sdp"
+    card_view:cardCornerRadius="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="@dimen/_110sdp"
+        android:id="@+id/Image_Unit"
+        android:scaleType="fitXY"
+        android:src="@drawable/desfultakaar"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/Image_Unit"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:textColor="#3584ab"
+        android:maxLines="2"
+        android:text="ain shams fkjkjdfkjkdfjkfjd"
+        android:id="@+id/Title"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/Image_Unit"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:textColor="#6d6d6d"
+        android:maxLines="2"
+        android:layout_below="@+id/Title"
+        android:text="ain shams maserjd"
+        android:id="@+id/Address"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/Image_Unit"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:textColor="#6d6d6d"
+        android:maxLines="1"
+        android:layout_below="@+id/Address"
+        android:text="ain shams maserjd"
+        android:id="@+id/Price"
+        />
+
+    <ImageView
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:layout_below="@+id/Price"
+        android:layout_toLeftOf="@+id/Image_Unit"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:src="@drawable/ic_area"
+        android:id="@+id/icon_Area"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/icon_Area"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:textColor="#6d6d6d"
+        android:maxLines="1"
+        android:layout_below="@+id/Price"
+        android:text="232"
+        android:id="@+id/Distance_Area"
+
+        />
+    <ImageView
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:layout_below="@+id/Price"
+        android:layout_toLeftOf="@+id/Distance_Area"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:src="@drawable/date"
+        android:id="@+id/icon_Date"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/icon_Date"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:textColor="#6d6d6d"
+        android:maxLines="1"
+        android:layout_below="@+id/Price"
+        android:text="232"
+        android:id="@+id/T_Date"
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/Image_Unit"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:textColor="#6d6d6d"
+            android:maxLines="1"
+            android:layout_below="@+id/icon_Area"
+            android:id="@+id/T_Type"
+            />
+    <ProgressBar
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:id="@+id/progross"
+        android:visibility="invisible"
+        />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

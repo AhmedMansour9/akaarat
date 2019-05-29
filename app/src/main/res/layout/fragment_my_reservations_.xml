@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8fcff"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Tenant_Account.Fragments.MyReservations_Fragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#0591de"
+        app:popupTheme="@style/PopupOverlay">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/reservations"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold"
+                />
+
+
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tas"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_below="@+id/toolbar"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/bc_tabs"
+        app:tabBackground="@drawable/tab_color_selector"
+        app:tabMode="fixed"
+        app:tabGravity="fill"/>
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpa"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tas"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
+
+
+
+</RelativeLayout>

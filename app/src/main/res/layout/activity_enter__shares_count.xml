@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    tools:context=".Activity.Rating_Office">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:background="#ffffff"
+        android:layout_height="@dimen/_300sdp">
+        <ProgressBar
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerInParent="true"
+            android:id="@+id/progross"
+            android:visibility="gone"
+
+            />
+
+
+
+        <!--<androidx.appcompat.widget.AppCompatEditText-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/_30sdp"-->
+        <!--android:layout_below="@+id/ratingBar"-->
+        <!--android:layout_marginRight="@dimen/_50sdp"-->
+        <!--android:layout_marginLeft="@dimen/_50sdp"-->
+        <!--android:hint="@string/writecomment"-->
+        <!--android:gravity="start"-->
+        <!--android:textColor="#e4e4e4"-->
+        <!--android:textStyle="bold"-->
+        <!--android:padding="@dimen/_10sdp"-->
+        <!--android:textColorHint="#e4e4e4"-->
+        <!--android:background="@drawable/bc_edittext_rating"-->
+        <!--/>-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/fab"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/initialshareprice"
+                android:textColor="#0691de"
+                android:textSize="@dimen/_12sdp"
+                android:id="@+id/Start_Price"
+                />
+
+            <TextView
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:textColor="#fff"
+                android:gravity="center"
+                android:id="@+id/E_StartPrice"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:textSize="@dimen/_12sdp"
+                android:layout_below="@+id/Start_Price"
+                android:background="@drawable/bc_price" />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lastshareprice"
+                android:textColor="#0691de"
+                android:textSize="@dimen/_12sdp"
+                android:id="@+id/L_Price"
+                android:layout_alignParentRight="true"
+                />
+
+            <TextView
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:textColor="#fff"
+                android:gravity="center"
+                android:id="@+id/E_LastPrice"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:textSize="@dimen/_12sdp"
+                android:layout_below="@+id/L_Price"
+                android:background="@drawable/bc_price"
+                android:layout_alignParentRight="true"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:id="@+id/EnterSharePrice"
+                android:layout_below="@+id/E_LastPrice"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/bc_editprice"
+                android:hint="@string/entershareprice"
+                android:textColorHint="#b1b1b1"
+                android:padding="@dimen/_10sdp"
+                android:inputType="number"
+                android:textColor="#b1b1b1"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:id="@+id/NUmberOfShares"
+                android:layout_below="@+id/EnterSharePrice"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/bc_editprice"
+                android:hint="@string/numberofshares"
+                android:textColorHint="#b1b1b1"
+                android:padding="@dimen/_10sdp"
+                android:inputType="number"
+                android:textColor="#b1b1b1"
+                />
+
+
+
+
+
+        </RelativeLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/bookunit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            app:backgroundTint="#0691de"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:src="@drawable/add" />
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/circle_shape">
+        <!--<ImageView-->
+        <!--android:layout_width="@dimen/_50sdp"-->
+        <!--android:layout_height="@dimen/_50sdp"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:src="@drawable/ic_add" />-->
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="textspin">#5980a7</color>
+    <color name="yellow">#ff8901</color>
+    <color name="tabs">#3883ab</color>
+    <color name="tab_background_selected">#0691de</color>
+    <color name="tab_background_unselected">#fff</color>
+
+
+</resources>

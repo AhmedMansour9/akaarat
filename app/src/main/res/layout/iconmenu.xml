@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:rotationX="180"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:id="@+id/menu"
+        android:src="@drawable/ic_tab_menu"
+        android:layout_gravity="center_horizontal" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:text="@string/menu"
+        android:textSize="@dimen/_10sdp"
+        android:textColor="#b3b3b3"
+        android:id="@+id/T_Menu"
+        android:layout_gravity="center_horizontal" />
+
+
+</LinearLayout>

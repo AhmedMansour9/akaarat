@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeee"
+    android:id="@+id/Rela_Search"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.Search">
+    <fragment
+        android:id="@+id/MAP"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#0591de"
+        app:popupTheme="@style/PopupOverlay">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/advancedsearch"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold"
+                />
+
+
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_Units"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_margin="@dimen/_20sdp"
+        android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#3b7fa2"
+            android:text="@string/selectsearchtyp"
+            android:id="@+id/select"
+            android:textSize="@dimen/_14sdp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rel_unitypes"
+            android:layout_below="@+id/select"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/bs_spinner_search">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/Units_Types_Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:spinnerMode="dialog"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:backgroundTint="#cdcdcd">
+
+
+            </androidx.appcompat.widget.AppCompatSpinner>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_below="@+id/rel_unitypes"
+            android:id="@+id/rel_cities"
+            android:background="@drawable/bs_spinner_search"
+            android:orientation="horizontal">
+
+
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:id="@+id/E_SearchPlace"
+                    android:gravity="center_vertical"
+                    android:hint="@string/selectunitlocation"
+                    android:textColorHint="#5980a7"
+                    android:backgroundTint="@android:color/transparent"
+                    android:textColor="#5980a7"
+                    android:singleLine="true"
+                    android:paddingRight="20dp"
+                    android:textStyle="italic"
+                    android:popupBackground="#fff" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_below="@+id/rel_cities"
+            android:id="@+id/rel_TypeName"
+            android:background="@drawable/bs_spinner_search"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/Types_Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:spinnerMode="dialog"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:backgroundTint="#cdcdcd">
+
+
+            </androidx.appcompat.widget.AppCompatSpinner>
+
+
+        </RelativeLayout>
+
+        <EditText
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_below="@+id/rel_TypeName"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/bs_spinner_search"
+            android:hint="@string/sizearea"
+            android:textColorHint="#bcbcbc"
+            android:inputType="number"
+            android:id="@+id/SizebyMeter"
+            android:paddingRight="@dimen/_10sdp"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="#bcbcbc"
+            android:maxLines="1"
+
+            />
+
+        <EditText
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_below="@+id/rel_TypeName"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/bs_spinner_search"
+            android:hint="@string/sizearea"
+            android:textColorHint="#bcbcbc"
+            android:inputType="number"
+            android:maxLength="5"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/NumberByrRooms"
+            android:paddingRight="@dimen/_10sdp"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="#bcbcbc"
+            android:maxLines="1"
+
+            />
+
+        <EditText
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_below="@+id/SizebyMeter"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/bs_spinner_search"
+            android:hint="@string/pricefrom"
+            android:textColorHint="#bcbcbc"
+            android:inputType="number"
+            android:id="@+id/PriceFrom"
+            android:paddingRight="@dimen/_10sdp"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="#bcbcbc"
+            android:maxLines="1"
+
+            />
+
+        <EditText
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_below="@+id/SizebyMeter"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/bs_spinner_search"
+            android:hint="@string/priceTo"
+            android:textColorHint="#bcbcbc"
+            android:inputType="number"
+            android:maxLength="5"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/PriceTo"
+            android:paddingRight="@dimen/_10sdp"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="#bcbcbc"
+            android:maxLines="1"
+
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_below="@+id/PriceFrom"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:background="#0591de"
+            android:id="@+id/UnitsTybes_Spinner"
+            android:text="@string/searchnow"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold"
+            />
+    </RelativeLayout>
+
+    </ScrollView>
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+</RelativeLayout>

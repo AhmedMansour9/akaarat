@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8fcff"
+    tools:context=".Activity.Login">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#0591de"
+        app:popupTheme="@style/PopupOverlay">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/signnin"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold"
+                />
+
+
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/toolbar"
+        android:src="@drawable/ic_splash_logo"
+        android:id="@+id/splas_logo"
+        android:layout_marginTop="@dimen/_50sdp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/splas_logo"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/bs_spinner_search"
+            android:hint="@string/username"
+            android:textColorHint="#bcbcbc"
+            android:inputType="textEmailAddress"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:id="@+id/E_User_Name"
+            android:drawableRight="@drawable/ic_user"
+            android:textColor="#bcbcbc"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/bs_spinner_search"
+            android:hint="@string/password"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:paddingStart="@dimen/_10sdp"
+            android:layout_below="@+id/E_User_Name"
+            android:textColorHint="#bcbcbc"
+            android:textColor="#bcbcbc"
+            android:gravity="end|center"
+            android:inputType="textPassword"
+            android:id="@+id/E_Password"
+            android:drawableRight="@drawable/ic_password"
+            android:drawablePadding="@dimen/_10sdp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/E_Password"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_alignParentLeft="true"
+            android:text="@string/forgetpass"
+            android:textColor="#3b7ca6"
+            android:textSize="@dimen/_14sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:textStyle="bold"
+            android:id="@+id/forget"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_below="@+id/forget"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:background="#0591de"
+            android:text="@string/signnin"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:id="@+id/Sign_Up"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_below="@+id/Sign_Up"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/bc_newaccount"
+            android:text="@string/newaccount"
+            android:textColor="#1a87ca"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:id="@+id/New_Account"
+            />
+
+    </RelativeLayout>
+    <ProgressBar
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:id="@+id/progross"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        />
+</RelativeLayout>
