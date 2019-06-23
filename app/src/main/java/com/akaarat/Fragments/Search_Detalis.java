@@ -264,6 +264,7 @@ public class Search_Detalis extends Fragment implements ListUnitDetails_View,
             bundle.putString("officeid", String.valueOf(list.getOfficeid()));
             bundle.putString("enabledid", String.valueOf(list.getEnablebid()));
             bundle.putString("lastprice", String.valueOf(list.getLastbidprice()));
+            bundle.putString("purpustype",String.valueOf(list.getPurposetype()));
             detailsHomeProductFragment.setArguments(bundle);
             getFragmentManager().beginTransaction().add(R.id.Rela_Search, detailsHomeProductFragment)
                     .addToBackStack(null).commit();
@@ -282,6 +283,7 @@ public class Search_Detalis extends Fragment implements ListUnitDetails_View,
             bundle.putString("officeid", String.valueOf(list.getOfficeid()));
             bundle.putString("enabledid", String.valueOf(list.getEnablebid()));
             bundle.putString("lastprice", String.valueOf(list.getLastbidprice()));
+            bundle.putString("purpustype",String.valueOf(list.getPurposetype()));
             detailsHomeProductFragment.setArguments(bundle);
             getFragmentManager().beginTransaction().add(R.id.Rela_MyAcc, detailsHomeProductFragment)
                     .addToBackStack(null).commit();

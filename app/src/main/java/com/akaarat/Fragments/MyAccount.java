@@ -26,16 +26,16 @@ public class MyAccount extends Fragment {
         // Required empty public constructor
     }
     View view;
-    @BindView(R.id.card_aboutus)
-    RelativeLayout Card_AboutUs;
+//    @BindView(R.id.card_aboutus)
+//    RelativeLayout Card_AboutUs;
     @BindView(R.id.card_bitrealstate)
     RelativeLayout Card_BitRealState;
-    @BindView(R.id.card_contactus)
-    RelativeLayout Card_ContactUs;
+//    @BindView(R.id.card_contactus)
+//    RelativeLayout Card_ContactUs;
     @BindView(R.id.card_newestadds)
     RelativeLayout Card_NewAdds;
-    @BindView(R.id.card_rentcontract)
-    RelativeLayout Card_RentContract;
+//    @BindView(R.id.card_rentcontract)
+//    RelativeLayout Card_RentContract;
     @BindView(R.id.card_specialstate)
     RelativeLayout Crad_SpecialStates;
     @BindView(R.id.log_in)
@@ -46,12 +46,12 @@ public class MyAccount extends Fragment {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_my_account, container, false);
         ButterKnife.bind(this,view);
-        Card_AboutUs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
+//        Card_AboutUs.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
 
         Card_BitRealState.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,12 +66,12 @@ public class MyAccount extends Fragment {
 
             }
         });
-        Card_ContactUs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
+//        Card_ContactUs.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
 
         Card_NewAdds.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,12 +85,12 @@ public class MyAccount extends Fragment {
 
             }
         });
-        Card_RentContract.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
+//        Card_RentContract.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
 
 
         Crad_SpecialStates.setOnClickListener(new View.OnClickListener() {
@@ -110,6 +110,7 @@ public class MyAccount extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getActivity(), Login.class);
+                intent.putExtra("type","null");
                 startActivity(intent);
 
             }

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
-    android:id="@+id/Rela_MyAcc"
+    android:id="@+id/Rela_MyAccount"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.MyAccount">
     <ScrollView
@@ -74,7 +74,7 @@
             android:layout_width="@dimen/_80sdp"
             android:layout_height="@dimen/_87sdp"
             android:id="@+id/card_specialstate"
-            android:layout_marginTop="@dimen/_40sdp">
+            android:layout_marginTop="@dimen/_80sdp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -107,47 +107,11 @@
 
         <RelativeLayout
             android:layout_width="@dimen/_80sdp"
-            android:layout_height="@dimen/_87sdp"
-            android:id="@+id/card_bitrealstate"
-            android:layout_marginTop="@dimen/_40sdp"
-            android:layout_centerHorizontal="true">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:layout_width="@dimen/_35sdp"
-                    android:layout_height="@dimen/_35sdp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:src="@drawable/ic_accounttransaction"
-                    android:id="@+id/logo_2"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/logo_2"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/_15sdp"
-                    android:textColor="#6b6b6b"
-                    android:id="@+id/Title_bit"
-                    android:gravity="center"
-                    android:text="@string/acountintransaction"
-                    android:textSize="@dimen/_10sdp"
-                    />
-
-            </RelativeLayout>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="@dimen/_80sdp"
-            android:layout_height="@dimen/_87sdp"
-            android:id="@+id/card_addads"
+            android:layout_height="@dimen/_80sdp"
+            android:id="@+id/card_specialsta"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="@dimen/_40sdp">
+            android:layout_marginTop="@dimen/_80sdp"
+            >
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -158,31 +122,105 @@
                     android:layout_height="@dimen/_35sdp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:src="@drawable/ic_benifits"
-                    android:id="@+id/logo_3"
+                    android:src="@drawable/ic_special_real_state"
+                    android:id="@+id/log"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/logo_3"
+                    android:layout_below="@+id/log"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="@dimen/_15sdp"
                     android:textColor="#6b6b6b"
-                    android:id="@+id/Title_ads"
-                    android:gravity="center"
+                    android:id="@+id/Title_specia"
                     android:textSize="@dimen/_10sdp"
-                    android:text="@string/benfits"
+                    android:text="@string/specialrealstate"
                     />
 
             </RelativeLayout>
 
         </RelativeLayout>
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="@dimen/_80sdp"-->
+            <!--android:layout_height="@dimen/_87sdp"-->
+            <!--android:id="@+id/card_bitrealstate"-->
+            <!--android:layout_marginTop="@dimen/_40sdp"-->
+            <!--android:layout_centerHorizontal="true">-->
+
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="@dimen/_35sdp"-->
+                    <!--android:layout_height="@dimen/_35sdp"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--android:layout_marginTop="@dimen/_10sdp"-->
+                    <!--android:src="@drawable/ic_accounttransaction"-->
+                    <!--android:id="@+id/logo_2"-->
+                    <!--/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/logo_2"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--android:layout_marginTop="@dimen/_15sdp"-->
+                    <!--android:textColor="#6b6b6b"-->
+                    <!--android:id="@+id/Title_bit"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="@string/acountintransaction"-->
+                    <!--android:textSize="@dimen/_10sdp"-->
+                    <!--/>-->
+
+            <!--</RelativeLayout>-->
+
+        <!--</RelativeLayout>-->
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="@dimen/_80sdp"-->
+            <!--android:layout_height="@dimen/_87sdp"-->
+            <!--android:id="@+id/card_addads"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_marginTop="@dimen/_40sdp">-->
+
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="@dimen/_35sdp"-->
+                    <!--android:layout_height="@dimen/_35sdp"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--android:layout_marginTop="@dimen/_10sdp"-->
+                    <!--android:src="@drawable/ic_benifits"-->
+                    <!--android:id="@+id/logo_3"-->
+                    <!--/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/logo_3"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--android:layout_marginTop="@dimen/_15sdp"-->
+                    <!--android:textColor="#6b6b6b"-->
+                    <!--android:id="@+id/Title_ads"-->
+                    <!--android:gravity="center"-->
+                    <!--android:textSize="@dimen/_10sdp"-->
+                    <!--android:text="@string/benfits"-->
+                    <!--/>-->
+
+            <!--</RelativeLayout>-->
+
+        <!--</RelativeLayout>-->
 
         <RelativeLayout
             android:layout_width="@dimen/_80sdp"
             android:layout_height="@dimen/_87sdp"
             android:id="@+id/card_newestadds"
+            android:layout_centerHorizontal="true"
             android:layout_below="@+id/card_specialstate"
             >
 
@@ -216,48 +254,48 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="@dimen/_80sdp"
-            android:layout_height="@dimen/_87sdp"
-            android:id="@+id/card_favuritmenu"
-            android:layout_below="@+id/card_bitrealstate"
-            android:layout_centerHorizontal="true">
+        <!--<RelativeLayout-->
+            <!--android:layout_width="@dimen/_80sdp"-->
+            <!--android:layout_height="@dimen/_87sdp"-->
+            <!--android:id="@+id/card_favuritmenu"-->
+            <!--android:layout_below="@+id/card_bitrealstate"-->
+            <!--android:layout_centerHorizontal="true">-->
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent">-->
 
-                <ImageView
-                    android:layout_width="@dimen/_35sdp"
-                    android:layout_height="@dimen/_35sdp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:src="@drawable/ic_favourit"
-                    android:id="@+id/logo_5" />
+                <!--<ImageView-->
+                    <!--android:layout_width="@dimen/_35sdp"-->
+                    <!--android:layout_height="@dimen/_35sdp"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--android:layout_marginTop="@dimen/_10sdp"-->
+                    <!--android:src="@drawable/ic_favourit"-->
+                    <!--android:id="@+id/logo_5" />-->
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/logo_5"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/_15sdp"
-                    android:textColor="#6b6b6b"
-                    android:id="@+id/Title_favourit"
-                    android:text="@string/favouritmenu"
-                    android:textSize="@dimen/_10sdp"
-                    />
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/logo_5"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--android:layout_marginTop="@dimen/_15sdp"-->
+                    <!--android:textColor="#6b6b6b"-->
+                    <!--android:id="@+id/Title_favourit"-->
+                    <!--android:text="@string/favouritmenu"-->
+                    <!--android:textSize="@dimen/_10sdp"-->
+                    <!--/>-->
 
-            </RelativeLayout>
+            <!--</RelativeLayout>-->
 
-        </RelativeLayout>
+        <!--</RelativeLayout>-->
 
         <RelativeLayout
             android:layout_width="@dimen/_80sdp"
             android:layout_height="@dimen/_87sdp"
             android:id="@+id/card_rentcontract"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/card_bitrealstate">
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_80sdp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -288,77 +326,77 @@
         </RelativeLayout>
 
 
-        <RelativeLayout
-            android:layout_width="@dimen/_80sdp"
-            android:layout_height="@dimen/_87sdp"
-            android:id="@+id/card_contactus"
+        <!--<RelativeLayout-->
+            <!--android:layout_width="@dimen/_80sdp"-->
+            <!--android:layout_height="@dimen/_87sdp"-->
+            <!--android:id="@+id/card_contactus"-->
 
-            android:layout_below="@+id/card_newestadds">
+            <!--android:layout_below="@+id/card_newestadds">-->
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent">-->
 
-                <ImageView
-                    android:layout_width="@dimen/_35sdp"
-                    android:layout_height="@dimen/_35sdp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:src="@drawable/ic_contact"
-                    android:id="@+id/logo_7"
-                    />
+                <!--<ImageView-->
+                    <!--android:layout_width="@dimen/_35sdp"-->
+                    <!--android:layout_height="@dimen/_35sdp"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--android:layout_marginTop="@dimen/_10sdp"-->
+                    <!--android:src="@drawable/ic_contact"-->
+                    <!--android:id="@+id/logo_7"-->
+                    <!--/>-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/logo_7"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/_15sdp"
-                    android:textColor="#6b6b6b"
-                    android:id="@+id/Title_contact"
-                    android:textSize="@dimen/_10sdp"
-                    android:text="@string/contactus"
-                    />
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/logo_7"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--android:layout_marginTop="@dimen/_15sdp"-->
+                    <!--android:textColor="#6b6b6b"-->
+                    <!--android:id="@+id/Title_contact"-->
+                    <!--android:textSize="@dimen/_10sdp"-->
+                    <!--android:text="@string/contactus"-->
+                    <!--/>-->
 
-            </RelativeLayout>
+            <!--</RelativeLayout>-->
 
-        </RelativeLayout>
+        <!--</RelativeLayout>-->
 
-        <RelativeLayout
-            android:layout_width="@dimen/_80sdp"
-            android:layout_height="@dimen/_87sdp"
-            android:id="@+id/card_aboutus"
-            android:layout_below="@+id/card_newestadds"
-            android:layout_centerHorizontal="true">
+        <!--<RelativeLayout-->
+            <!--android:layout_width="@dimen/_80sdp"-->
+            <!--android:layout_height="@dimen/_87sdp"-->
+            <!--android:id="@+id/card_aboutus"-->
+            <!--android:layout_below="@+id/card_newestadds"-->
+            <!--android:layout_centerHorizontal="true">-->
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent">-->
 
-                <ImageView
-                    android:layout_width="@dimen/_35sdp"
-                    android:layout_height="@dimen/_35sdp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:src="@drawable/ic_info"
-                    android:id="@+id/logo_8" />
+                <!--<ImageView-->
+                    <!--android:layout_width="@dimen/_35sdp"-->
+                    <!--android:layout_height="@dimen/_35sdp"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--android:layout_marginTop="@dimen/_10sdp"-->
+                    <!--android:src="@drawable/ic_info"-->
+                    <!--android:id="@+id/logo_8" />-->
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/logo_8"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/_15sdp"
-                    android:textColor="#6b6b6b"
-                    android:id="@+id/Titleaboutus"
-                    android:text="@string/aboutus"
-                    android:textSize="@dimen/_10sdp"
-                    />
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/logo_8"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--android:layout_marginTop="@dimen/_15sdp"-->
+                    <!--android:textColor="#6b6b6b"-->
+                    <!--android:id="@+id/Titleaboutus"-->
+                    <!--android:text="@string/aboutus"-->
+                    <!--android:textSize="@dimen/_10sdp"-->
+                    <!--/>-->
 
-            </RelativeLayout>
+            <!--</RelativeLayout>-->
 
-        </RelativeLayout>
+        <!--</RelativeLayout>-->
 
         <!--<RelativeLayout-->
             <!--android:layout_width="@dimen/_80sdp"-->
@@ -395,41 +433,7 @@
 
         <!--</RelativeLayout>-->
 
-        <RelativeLayout
-            android:layout_width="@dimen/_80sdp"
-            android:layout_height="@dimen/_80sdp"
-            android:id="@+id/card_specialsta"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/card_newestadds">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:layout_width="@dimen/_35sdp"
-                android:layout_height="@dimen/_35sdp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:src="@drawable/ic_special_real_state"
-                android:id="@+id/log"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/log"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:textColor="#6b6b6b"
-                android:id="@+id/Title_specia"
-                android:textSize="@dimen/_10sdp"
-                android:text="@string/specialrealstate"
-                />
-
-        </RelativeLayout>
-
-    </RelativeLayout>
 </RelativeLayout>
 
 

@@ -48,4 +48,31 @@ public class SharedPrefManager {
         return  sharedPreferences.getString("clintid", null);
     }
 
+    public boolean saveUserType(String token){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences("TYPE", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("usertype", token);
+        editor.apply();
+        return true;
+    }
+
+    public String getUserType(){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences("TYPE", Context.MODE_PRIVATE);
+        return  sharedPreferences.getString("usertype", null);
+    }
+
+    public boolean saveUserID(String token){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences("ID", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("userid", token);
+        editor.apply();
+        return true;
+    }
+
+    public String getUserID(){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences("ID", Context.MODE_PRIVATE);
+        return  sharedPreferences.getString("userid", null);
+    }
+
+
 }

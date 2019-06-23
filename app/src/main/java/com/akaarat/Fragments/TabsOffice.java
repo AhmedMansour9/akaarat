@@ -42,12 +42,10 @@ public class TabsOffice extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_details_office, container, false);
 
-        viewPager = view.findViewById(R.id.viewpa);
+        viewPager = view.findViewById(R.id.viewpager);
         setupViewPager(viewPager);
-
-        tabLayout = view.findViewById(R.id.tas);
+        tabLayout = view.findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
-
         tabLayout.setTabTextColors(
                 ColorStateList.valueOf(Color.BLACK));
         if (Language.isRTL()) {
@@ -55,10 +53,10 @@ public class TabsOffice extends Fragment {
         } else {
             tabLayout.getTabAt(0).select();
         }
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             tabLayout.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
         }
-
 
         return view;
     }
@@ -78,7 +76,7 @@ public class TabsOffice extends Fragment {
             adapter.addFragment(new About_office(), getResources().getString(R.string.aboutoffice));
         }
 
-        viewPager.setCurrentItem(adapter.getCount() - 1);
+//        viewPager.setCurrentItem(adapter.getCount() - 1);
         viewPager.setAdapter(adapter);
     }
 

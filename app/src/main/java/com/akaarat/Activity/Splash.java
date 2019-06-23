@@ -8,8 +8,9 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-import com.akaarat.Tenant_Account.Tabs_MalekAccount;
 import com.akaarat.R;
+import com.akaarat.SharedPrefManager;
+import com.akaarat.Tenant_Account.Tabs_TenentAccount;
 
 import java.util.Locale;
 
@@ -46,10 +47,27 @@ public class Splash extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
 
+             String type= SharedPrefManager.getInstance(Splash.this).getUserType();
+             if(type!=null) {
+                 if (type.equals("2")) {
+                     finish();
+                     Intent i = new Intent(getBaseContext(), Tabs_TenentAccount.class);
+                     startActivity(i);
 
-                finish();
-                Intent i = new Intent(getBaseContext(), Home_Tabs.class);
-                startActivity(i);
+                 } else {
+                     finish();
+                     Intent i = new Intent(getBaseContext(), Home_Tabs.class);
+                     startActivity(i);
+
+                 }
+
+             }else {
+
+                 finish();
+                 Intent i = new Intent(getBaseContext(), Home_Tabs.class);
+                 startActivity(i);
+
+             }
             }
 
             @Override

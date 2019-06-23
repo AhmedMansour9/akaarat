@@ -4,9 +4,14 @@ import com.akaarat.Model.Banner_Response;
 import com.akaarat.Model.BookUnits_Response;
 import com.akaarat.Model.Dynamic_Attributes_Response;
 import com.akaarat.Model.OfficeProfile_Response;
+import com.akaarat.Model.PayMentType_Details;
+import com.akaarat.Model.PayMentType_Response;
 import com.akaarat.Model.RegisterResponse;
 import com.akaarat.Model.Units_Tybes_Response;
 import com.akaarat.Model.Units_response;
+import com.akaarat.Tenant_Account.Model.Contracts_Response;
+import com.akaarat.Tenant_Account.Model.Messages_Response;
+import com.akaarat.Tenant_Account.Model.Reservation_Response;
 
 import java.util.Map;
 
@@ -35,6 +40,28 @@ public interface Apiinterface {
 
     @GET("AddUnitClientPrice")
     Call<BookUnits_Response> Book_Unit(@QueryMap Map<String, String> queryMab);
+
+    @GET("GetBookingsBYCustomer")
+    Call<Reservation_Response> Reservations(@QueryMap Map<String, String> queryMab);
+
+    @GET("GetContractsBYCustomer")
+    Call<Contracts_Response> Contracts(@QueryMap Map<String, String> queryMab);
+
+
+    @GET("GetMessagesByUser")
+    Call<Messages_Response> Messages(@QueryMap Map<String, String> queryMab);
+
+
+    @GET("bookrentunit")
+    Call<BookUnits_Response> Book_Rent_Unit(@QueryMap Map<String, String> queryMab);
+
+    @GET("booksaleunit")
+    Call<BookUnits_Response> Book_Sale_Unit(@QueryMap Map<String, String> queryMab);
+
+
+    @GET("GetPaymentMethodTypesByUnitID")
+    Call<PayMentType_Response> GetPayMentMethod(@QueryMap Map<String, String> queryMab);
+
 
 
     @GET("GetAllUnitsByFilterParameters")

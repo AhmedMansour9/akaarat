@@ -552,6 +552,7 @@ public class Menu extends Fragment implements ListUnitDetails_View, OnMapReadyCa
         Details_Units_Fragment detailsHomeProductFragment=new Details_Units_Fragment();
         Bundle bundle=new Bundle();
         bundle.putString("from","menu");
+        bundle.putString("purpustype",String.valueOf(list.getPurposetype()));
         bundle.putString("id",String.valueOf(list.getId()));
         bundle.putString("price",String.valueOf(list.getSellingprice()));
         bundle.putString("address",String.valueOf(list.getLocationdescription()));

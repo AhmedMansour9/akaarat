@@ -77,10 +77,10 @@ public class Enter_SharesCount extends AppCompatActivity implements BookUnit_Vie
     }
 
     public void getData(){
-        Price=getIntent().getStringExtra("Price");
+        Price=getIntent().getStringExtra("price");
         lastprice=getIntent().getStringExtra("lastprice");
         Type=getIntent().getStringExtra("type");
-        UnitId=getIntent().getStringExtra("UnitId");
+        UnitId=getIntent().getStringExtra("unitid");
         NumberOfShare=getIntent().getStringExtra("NumberOfshare");
         E_StartPrice.setText(Price+" "+getResources().getString(R.string.sar));
         E_LastPrice.setText(lastprice+" "+getResources().getString(R.string.sar));

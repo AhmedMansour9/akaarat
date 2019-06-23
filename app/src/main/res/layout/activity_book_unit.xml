@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_marginTop="@dimen/_50sdp"
         android:background="#ffffff"
-        android:layout_height="@dimen/_300sdp">
+        android:layout_height="@dimen/_250sdp">
         <ProgressBar
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp"
@@ -41,41 +41,64 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/fab"
             android:layout_marginTop="@dimen/_50sdp"
             android:layout_marginLeft="@dimen/_20sdp"
             android:layout_marginRight="@dimen/_20sdp"
             android:layout_marginBottom="@dimen/_20sdp">
 
 
-
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/Cities_Spinner"
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
-                android:layout_marginTop="@dimen/_40sdp"
-                android:layout_marginLeft="@dimen/_13sdp"
-                android:layout_marginRight="@dimen/_13sdp"
-                android:spinnerMode="dialog"
-                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
-                app:backgroundTint="#919191">
+                android:layout_height="@dimen/_35sdp"
+                android:id="@+id/E_Exceptedstartdate"
+                android:background="@drawable/bc_editprice"
+                android:hint="@string/expectedstartdate"
+                android:textColorHint="#b1b1b1"
+                android:padding="@dimen/_10sdp"
+                android:textColor="#b1b1b1"
+                />
 
-              <TextView
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:textColor="#706a6a"
-                  android:paddingLeft="@dimen/_5sdp"
-                  android:text="12312"
-                  android:paddingRight="@dimen/_5sdp"
-                  android:layout_below="@+id/Cities_Spinner"
-                  android:background="@drawable/bcwdittext"
-                  android:layout_marginTop="@dimen/_20sdp"
-                  android:id="@+id/T_Date"
-                  android:textStyle="bold"
-                  />
+            <EditText
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:id="@+id/E_RentTime"
+                android:background="@drawable/bc_editprice"
+                android:hint="@string/rentime"
+                android:textColorHint="#b1b1b1"
+                android:padding="@dimen/_10sdp"
+                android:inputType="number"
+                android:textColor="#b1b1b1"
+                android:layout_below="@+id/E_Exceptedstartdate"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:textSize="@dimen/_12sdp"
+                />
+            <!--<EditText-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/_35sdp"-->
+                <!--android:id="@+id/E_RentType"-->
+                <!--android:background="@drawable/bc_editprice"-->
+                <!--android:hint="@string/rentime"-->
+                <!--android:textColorHint="#b1b1b1"-->
+                <!--android:padding="@dimen/_10sdp"-->
+                <!--android:textColor="#b1b1b1"-->
+                <!--android:layout_below="@+id/E_RentTime"-->
+                <!--android:layout_marginTop="@dimen/_10sdp"-->
+                <!--android:textSize="@dimen/_12sdp"-->
+                <!--/>-->
 
-
-            </androidx.appcompat.widget.AppCompatSpinner>
+            <Spinner
+                android:id="@+id/RentTimeType"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_below="@+id/E_Exceptedstartdate"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_gravity="center"
+                android:paddingRight="@dimen/_10sdp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/bc_editprice"
+                android:gravity="center"
+                android:paddingLeft="@dimen/_10sdp"
+                android:textColor="#000" />
 
         </RelativeLayout>
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -92,20 +115,20 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="@dimen/_80sdp"
-        android:layout_height="@dimen/_80sdp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:background="@drawable/circle_shape">
-        <!--<ImageView-->
-        <!--android:layout_width="@dimen/_50sdp"-->
-        <!--android:layout_height="@dimen/_50sdp"-->
-        <!--android:layout_centerInParent="true"-->
-        <!--android:src="@drawable/ic_add" />-->
+    <!--<RelativeLayout-->
+        <!--android:layout_width="@dimen/_80sdp"-->
+        <!--android:layout_height="@dimen/_80sdp"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="@dimen/_10sdp"-->
+        <!--android:background="@drawable/circle_shape">-->
+        <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="@dimen/_50sdp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="@dimen/_50sdp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_centerInParent="true"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:src="@drawable/ic_add" />&ndash;&gt;-->
 
 
-    </RelativeLayout>
+    <!--</RelativeLayout>-->
 
 
 

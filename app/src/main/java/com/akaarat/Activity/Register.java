@@ -22,6 +22,7 @@ import com.akaarat.Model.UserRegister;
 import com.akaarat.Presenter.Register_Presenter;
 import com.akaarat.R;
 import com.akaarat.SharedPrefManager;
+import com.akaarat.Tenant_Account.Tabs_TenentAccount;
 import com.akaarat.View.RegisterView;
 import com.fourhcode.forhutils.FUtilsValidation;
 
@@ -54,7 +55,8 @@ public class Register extends AppCompatActivity implements RegisterView {
     ProgressBar progross;
     @BindView(R.id.Sign_In)
     TextView Sign_In;
-    String UserType,lastprice;
+    String lastprice,Purpustype;
+    String UserType="null";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,6 +118,7 @@ public class Register extends AppCompatActivity implements RegisterView {
                 intent.putExtra("ShareAria",ShareAria);
                 intent.putExtra("CountOfSoldShare",CountOfSoldShare);
                 intent.putExtra("NumberOfshare",NumberOfshare);
+                intent.putExtra("purpustype",Purpustype);
                 startActivity(intent);
 
             }
@@ -130,6 +133,7 @@ public class Register extends AppCompatActivity implements RegisterView {
         CountOfSoldShare = getIntent().getStringExtra("CountOfSoldShare");
         NumberOfshare = getIntent().getStringExtra("NumberOfshare");
         lastprice=getIntent().getStringExtra("lastprice");
+        Purpustype=getIntent().getStringExtra("purpustype");
         register = new Register_Presenter(this, this);
         if(Type.equals("numberofshare")||Type.equals("bit")||Type.equals("book")){
             UserType="2";
@@ -175,8 +179,8 @@ public class Register extends AppCompatActivity implements RegisterView {
             public void onClick(View view) {
                 relativeTenentSelected.setVisibility(View.VISIBLE);
                 relativeTenent.setVisibility(View.INVISIBLE);
-                relativeOwnerSelected.setVisibility(View.VISIBLE);
-                relativeOwner.setVisibility(View.INVISIBLE);
+                relativeOwnerSelected.setVisibility(View.INVISIBLE);
+                relativeOwner.setVisibility(View.VISIBLE);
                 UserType="2";
             }
         });
@@ -216,31 +220,46 @@ public class Register extends AppCompatActivity implements RegisterView {
     public void openMain(UserDetails userDetails) {
         SharedPrefManager.getInstance(this).saveUserToken(userDetails.getAccessToken());
         SharedPrefManager.getInstance(this).saveClintid(userDetails.getCustomerid());
+        SharedPrefManager.getInstance(this).saveUserType(String.valueOf(userDetails.getUsertype()));
         Toast.makeText(this, getResources().getString(R.string.registersuccess), Toast.LENGTH_SHORT).show();
         progross.setVisibility(View.GONE);
         Register.setEnabled(true);
-      if(Type.equals("bit")||Type.equals("numberofshare")){
-          Intent intent=new Intent(Register.this,Enter_Bit_Now.class);
-          intent.putExtra("type",Type);
-          intent.putExtra("lastprice",lastprice);
-          intent.putExtra("NumberOfshare",NumberOfshare);
-          intent.putExtra("CountOfSoldShare",CountOfSoldShare);
-          intent.putExtra("ShareAria",ShareAria);
-          intent.putExtra("Price",Price);
-          intent.putExtra("UnitId",UnitId);
+        if(Type.equals("null")){
+            Intent intent=new Intent(Register.this, Tabs_TenentAccount.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
+        }
+       else if (Purpustype.equals("1")) {
+            Intent intent=new Intent(Register.this,BookRentUnit.class);
+            intent.putExtra("type",Type);
+            intent.putExtra("unitid",UnitId);
+            startActivity(intent);
 
-          startActivity(intent);
+
+        } else if(Purpustype.equals("2")){
+            if(Type.equals("bit")||Type.equals("numberofshare")){
+                Intent intent=new Intent(Register.this,Enter_Bit_Now.class);
+                intent.putExtra("type",Type);
+                intent.putExtra("lastprice",lastprice);
+                intent.putExtra("NumberOfshare",NumberOfshare);
+                intent.putExtra("CountOfSoldShare",CountOfSoldShare);
+                intent.putExtra("ShareAria",ShareAria);
+                intent.putExtra("price",Price);
+                intent.putExtra("unitid",UnitId);
+                startActivity(intent);
+
+            }
+            else if(Type.equals("book")){
+                Intent intent=new Intent(Register.this,Enter_SaleUnit.class);
+                intent.putExtra("type",Type);
+                intent.putExtra("unitid",UnitId);
+                startActivity(intent);
+
+
+            }
 
       }
-      else if(Type.equals("book")){
-
-
-      }else if(Type.equals("null")){
-
-
-      }
-
-
     }
 
     @Override

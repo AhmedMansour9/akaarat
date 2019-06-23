@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.akaarat.Fragments.Menu;
 import com.akaarat.Language;
-import com.akaarat.Tenant_Account.Fragments.MyAccount_Malek;
+import com.akaarat.Tenant_Account.Fragments.MyAccount_Tenent;
 import com.akaarat.Tenant_Account.Fragments.MyContracts_Fragment;
 import com.akaarat.Tenant_Account.Fragments.MyReservations_Fragment;
 import com.akaarat.R;
@@ -23,7 +23,7 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tabs_MalekAccount extends AppCompatActivity {
+public class Tabs_TenentAccount extends AppCompatActivity {
 
     public static TabLayout tabLayout;
     private ViewPager viewPager;
@@ -91,7 +91,7 @@ public class Tabs_MalekAccount extends AppCompatActivity {
             adapter.addFrag(new Menu(), getResources().getString(R.string.map));
             adapter.addFrag(new MyReservations_Fragment(), getResources().getString(R.string.menu));
             adapter.addFrag(new MyContracts_Fragment(), getResources().getString(R.string.search));
-            adapter.addFrag(new MyAccount_Malek(), getResources().getString(R.string.myacc));
+            adapter.addFrag(new MyAccount_Tenent(), getResources().getString(R.string.myacc));
 //        }else {
 //            adapter.addFrag(new My_Units_Fragment(), getResources().getString(R.string.map));
 //            adapter.addFrag(new Menu(), getResources().getString(R.string.menu));

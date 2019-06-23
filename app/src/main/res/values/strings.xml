@@ -115,4 +115,17 @@
     <string name="entershareprice">Enter Share Price</string>
     <string name="numberofshares">Number Of Shares</string>
     <string name="numberofsharesentered">Number of shares Entered Bigger than Number of shares Available</string>
+    <string name="expectedstartdate">Expected Start Date</string>
+    <string name="rentime">Rent Time</string>
+    <string name="renttype">PayMent Methods</string>
+    <string name="day">Day</string>
+    <string name="month">Month</string>
+    <string name="year">Year</string>
+    <string name="paymenttype">PayMent Methods</string>
+    <string name="buy">Buy</string>
+    <string name="rentcrontract">Rent Contract</string>
+    <string name="sellcontract">Sell contracts</string>
+    <string name="title">Title</string>
+    <string name="subject">Subject</string>
+    <string name="from">From</string>
 </resources>

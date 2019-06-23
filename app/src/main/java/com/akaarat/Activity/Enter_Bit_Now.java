@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,7 @@ import com.akaarat.Model.UserRegister;
 import com.akaarat.Presenter.Book_Unit_Presenter;
 import com.akaarat.R;
 import com.akaarat.SharedPrefManager;
+import com.akaarat.Tenant_Account.Tabs_TenentAccount;
 import com.akaarat.View.BookUnit_View;
 import com.fourhcode.forhutils.FUtilsValidation;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -65,12 +67,12 @@ public class Enter_Bit_Now extends AppCompatActivity implements BookUnit_View {
     }
 
     public void getData(){
-        Price=getIntent().getStringExtra("Price");
+        Price=getIntent().getStringExtra("price");
         lastprice=getIntent().getStringExtra("lastprice");
         Type=getIntent().getStringExtra("type");
-        UnitId=getIntent().getStringExtra("UnitId");
-        E_StartPrice.setText(Price+" "+getResources().getString(R.string.sar));
-        E_LastPrice.setText(lastprice+" "+getResources().getString(R.string.sar));
+        UnitId=getIntent().getStringExtra("unitid");
+        E_StartPrice.setText(lastprice+" "+getResources().getString(R.string.sar));
+        E_LastPrice.setText(Price+" "+getResources().getString(R.string.sar));
         CountOfSoldShare=getIntent().getStringExtra("CountOfSoldShare");
         book_unit_presenter=new Book_Unit_Presenter(this,this);
     }
@@ -80,6 +82,11 @@ public class Enter_Bit_Now extends AppCompatActivity implements BookUnit_View {
         bookunit.setEnabled(true);
         progross.setVisibility(View.GONE);
         Toast.makeText(this, ""+getResources().getString(R.string.booksuccess), Toast.LENGTH_SHORT).show();
+        Intent intent=new Intent(getBaseContext(), Tabs_TenentAccount.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
 
     }
 

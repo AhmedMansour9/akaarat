@@ -138,6 +138,7 @@ public class Units_Adapter  extends RecyclerView.Adapter<Units_Adapter.MyViewHol
                 Units_Detail units_detail=new Units_Detail();
                 units_detail.setId(filteredList.get(position).getId());
                 units_detail.setSellingprice(Price);
+                units_detail.setPurposetype(filteredList.get(position).getPurposetype());
                 units_detail.setUnitdescription(filteredList.get(position).getUnitdescription());
                 units_detail.setUnittypeid(filteredList.get(position).getUnittypeid());
                 units_detail.setLocationdescription(filteredList.get(position).getLocationdescription());

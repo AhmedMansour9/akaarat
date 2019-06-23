@@ -101,4 +101,19 @@
     <string name="entershareprice">ادخل سعر السهم</string>
     <string name="numberofshares">عدد الاسهم</string>
     <string name="numberofsharesentered">عدد الاسهم المدخلة اكبر من عدد الاسهم المتاحة</string>
+    <string name="expectedstartdate">تاريخ البدء المتوقع</string>
+    <string name="rentime">مدة الايجار</string>
+    <string name="renttype">طرق الدفع</string>
+
+    <string name="day">يوم</string>
+    <string name="month">شهر</string>
+    <string name="year">سنة</string>
+    <string name="paymenttype">طرق الدفع</string>
+    <string name="buy">شراء</string>
+    <string name="rentcrontract">عقود الايجار</string>
+    <string name="sellcontract">عقود البيع</string>
+    <string name="title">العنوان</string>
+    <string name="subject">الموضوع</string>
+    <string name="from">من</string>
+
 </resources>

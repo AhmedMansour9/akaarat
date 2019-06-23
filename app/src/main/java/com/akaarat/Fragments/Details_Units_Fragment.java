@@ -14,6 +14,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.akaarat.Activity.BookRentUnit;
+import com.akaarat.Activity.Enter_Bit_Now;
+import com.akaarat.Activity.Enter_SaleUnit;
 import com.akaarat.Activity.Register;
 import com.akaarat.Adapter.Dynamic_Attributes_ِAdapter;
 import com.akaarat.Adapter.PannersDetailsUnits_Adapter;
@@ -31,6 +34,7 @@ import com.akaarat.Presenter.GetUnitsTypes_Present;
 import com.akaarat.Presenter.GetUnits_Presenter;
 import com.akaarat.Presenter.Office_Profile_Presenter;
 import com.akaarat.R;
+import com.akaarat.SharedPrefManager;
 import com.akaarat.View.BannerView;
 import com.akaarat.View.GetDynamic_Attributes_View;
 import com.akaarat.View.GetUnits_View;
@@ -70,7 +74,7 @@ public class Details_Units_Fragment extends Fragment implements OfficeProfile_Vi
     }
     Boolean end;
     View view;
-    String UnitId,Price,Address,Name,Date,SizeArea,Unit_Description,Enabledid,LastPrice;
+    String UnitId,Price,Address,Name,Date,SizeArea,Unit_Description,Enabledid,LastPrice,Purpustype;
     BannerPresenter baner;
     @BindView(R.id.recycler_Panners)
     RecyclerView recycler_Panners;
@@ -122,13 +126,15 @@ public class Details_Units_Fragment extends Fragment implements OfficeProfile_Vi
     @BindView(R.id.book_numberofshare) Button Btn_BookNumberOfShare;
     @BindView(R.id.RelaOffice)
     RelativeLayout RelaOffice;
+    String OfficeName,OfficePhone;
+    String Clintid;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_details_units, container, false);
         ButterKnife.bind(this,view);
-
+         Clintid= SharedPrefManager.getInstance(getContext()).getClintid();
         init();
         Language();
         GetData();
@@ -144,14 +150,25 @@ public class Details_Units_Fragment extends Fragment implements OfficeProfile_Vi
         Btn_bit_realstate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-           Intent intent=new Intent(getActivity(), Register.class);
-           intent.putExtra("unitid",UnitId);
-           intent.putExtra("price",Price);
-           intent.putExtra("lastprice",LastPrice);
-           intent.putExtra("type","bit");
-           startActivity(intent);
+           if(Clintid!=null){
+               Intent intent = new Intent(getActivity(), Enter_Bit_Now.class);
+               intent.putExtra("unitid", UnitId);
+               intent.putExtra("price", Price);
+               intent.putExtra("lastprice", LastPrice);
+               intent.putExtra("type", "bit");
+               intent.putExtra("purpustype", Purpustype);
+               startActivity(intent);
 
-            }
+           }   else {
+               Intent intent = new Intent(getActivity(), Register.class);
+               intent.putExtra("unitid", UnitId);
+               intent.putExtra("price", Price);
+               intent.putExtra("lastprice", LastPrice);
+               intent.putExtra("type", "bit");
+               intent.putExtra("purpustype", Purpustype);
+               startActivity(intent);
+           }
+           }
         });
 
     }
@@ -159,12 +176,28 @@ public class Details_Units_Fragment extends Fragment implements OfficeProfile_Vi
         Btn_book_realstate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+              if(Clintid!=null){
+                  if (Purpustype.equals("1")) {
+                      Intent intent=new Intent(getActivity(), BookRentUnit.class);
+                      intent.putExtra("type","book");
+                      intent.putExtra("unitid",UnitId);
+                      startActivity(intent);
+                  } else {
+                      Intent intent=new Intent(getActivity(), Enter_SaleUnit.class);
+                      intent.putExtra("type","book");
+                      intent.putExtra("unitid",UnitId);
+                      startActivity(intent);
 
-                Intent intent=new Intent(getActivity(), Register.class);
-                intent.putExtra("unitid",UnitId);
-                intent.putExtra("price",Price);
-                intent.putExtra("type","book");
-                startActivity(intent);
+                  }
+
+              } else {
+                  Intent intent = new Intent(getActivity(), Register.class);
+                  intent.putExtra("unitid", UnitId);
+                  intent.putExtra("price", Price);
+                  intent.putExtra("type", "book");
+                  intent.putExtra("purpustype", Purpustype);
+                  startActivity(intent);
+              }
 
 
             }
@@ -177,20 +210,34 @@ public class Details_Units_Fragment extends Fragment implements OfficeProfile_Vi
         Btn_BookNumberOfShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(Clintid!=null){
+                    Intent intent = new Intent(getActivity(), Enter_Bit_Now.class);
+                    int share = Integer.parseInt(NumberOfshare);
+                    int shareSold = Integer.parseInt(CountOfSoldShare);
+                    int shareremain = share - shareSold;
+                    intent.putExtra("unitid", UnitId);
+                    intent.putExtra("price", Price);
+                    intent.putExtra("type", "numberofshare");
+                    intent.putExtra("ShareAria", ShareAria);
+                    intent.putExtra("CountOfSoldShare", CountOfSoldShare);
+                    intent.putExtra("NumberOfshare", String.valueOf(shareremain));
+                    intent.putExtra("purpustype", Purpustype);
+                    startActivity(intent);
 
-                Intent intent=new Intent(getActivity(), Register.class);
-                int share=Integer.parseInt(NumberOfshare);
-                int shareSold=Integer.parseInt(CountOfSoldShare);
-                int shareremain=share-shareSold;
-
-                intent.putExtra("unitid",UnitId);
-                intent.putExtra("price",Price);
-                intent.putExtra("type","numberofshare");
-                intent.putExtra("ShareAria",ShareAria);
-                intent.putExtra("CountOfSoldShare",CountOfSoldShare);
-                intent.putExtra("NumberOfshare",String.valueOf(shareremain));
-                startActivity(intent);
-
+                }else {
+                    Intent intent = new Intent(getActivity(), Register.class);
+                    int share = Integer.parseInt(NumberOfshare);
+                    int shareSold = Integer.parseInt(CountOfSoldShare);
+                    int shareremain = share - shareSold;
+                    intent.putExtra("unitid", UnitId);
+                    intent.putExtra("price", Price);
+                    intent.putExtra("type", "numberofshare");
+                    intent.putExtra("ShareAria", ShareAria);
+                    intent.putExtra("CountOfSoldShare", CountOfSoldShare);
+                    intent.putExtra("NumberOfshare", String.valueOf(shareremain));
+                    intent.putExtra("purpustype", Purpustype);
+                    startActivity(intent);
+                }
 
             }
         });
@@ -217,7 +264,6 @@ public class Details_Units_Fragment extends Fragment implements OfficeProfile_Vi
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone_unit_office.getText().toString(), null));
                 startActivity(intent);
-
             }
         });
     }
@@ -239,6 +285,7 @@ public class Details_Units_Fragment extends Fragment implements OfficeProfile_Vi
             ShareAria=bundle.getString("shareAria");
             CountOfSoldShare=bundle.getString("countOfSoldShare");
             NumberOfshare=bundle.getString("numberOfshare");
+            Purpustype=bundle.getString("purpustype");
             From=bundle.getString("from");
             Datee.setText(Date);
             RelaOffice.setOnClickListener(new View.OnClickListener() {
@@ -248,6 +295,9 @@ public class Details_Units_Fragment extends Fragment implements OfficeProfile_Vi
                         TabsOffice detailsHomeProductFragment = new TabsOffice();
                         Bundle bundle = new Bundle();
                         bundle.putString("id", officeid);
+                        bundle.putString("phone", OfficePhone);
+                        bundle.putString("name", OfficeName);
+
                         detailsHomeProductFragment.setArguments(bundle);
                         getFragmentManager().beginTransaction().add(R.id.Rela_MyAcc, detailsHomeProductFragment)
                                 .addToBackStack(null).commit();
@@ -255,19 +305,22 @@ public class Details_Units_Fragment extends Fragment implements OfficeProfile_Vi
                         TabsOffice detailsHomeProductFragment = new TabsOffice();
                         Bundle bundle = new Bundle();
                         bundle.putString("id", officeid);
+                        bundle.putString("phone", OfficePhone);
+                        bundle.putString("name", OfficeName);
+
                         detailsHomeProductFragment.setArguments(bundle);
                         getFragmentManager().beginTransaction().add(R.id.Rela_Search, detailsHomeProductFragment)
                                 .addToBackStack(null).commit();
-
                     }
                     else if(From.equals("menu")){
                         TabsOffice detailsHomeProductFragment = new TabsOffice();
                         Bundle bundle = new Bundle();
                         bundle.putString("id", officeid);
+                        bundle.putString("phone", OfficePhone);
+                        bundle.putString("name", OfficeName);
                         detailsHomeProductFragment.setArguments(bundle);
                         getFragmentManager().beginTransaction().add(R.id.Menu_Frame , detailsHomeProductFragment)
                                 .addToBackStack(null).commit();
-
                     }
                 }
             });
@@ -277,7 +330,7 @@ public class Details_Units_Fragment extends Fragment implements OfficeProfile_Vi
                 LastPrice=bundle.getString("lastprice");
                 T_LastPrice.setVisibility(View.VISIBLE);
                 T_LastPrice.setText(LastPrice+" "+getResources().getString(R.string.sar));
-                price.setText(getResources().getString(R.string.lastprice) +": ");
+                price.setText(getResources().getString(R.string.startprice) +": ");
             }else {
                 price.setText(getResources().getString(R.string.price)+": "+Price+" "+getResources().getString(R.string.sar));
             }
@@ -410,6 +463,8 @@ public class Details_Units_Fragment extends Fragment implements OfficeProfile_Vi
 
     @Override
     public void officeProfile(Office_Profile office_profile) {
+        OfficeName=office_profile.getName();
+        OfficePhone=office_profile.getPhone();
         logo_office.setVisibility(View.VISIBLE);
         Title_unit_Office.setVisibility(View.VISIBLE);
         phone_unit_office.setVisibility(View.VISIBLE);

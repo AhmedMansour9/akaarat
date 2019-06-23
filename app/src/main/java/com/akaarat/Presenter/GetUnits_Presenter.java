@@ -53,6 +53,35 @@ public class GetUnits_Presenter {
         });
     }
 
+    public void getUnitsOffice(String Page, String lang,String id) {
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("lang", lang);
+        hashMap.put("page", Page);
+        hashMap.put("id",id);
+
+        Apiinterface service = ApiCLint.getClient().create(Apiinterface.class);
+        Call<Units_response> call = service.GetUnits(hashMap);
+        call.enqueue(new Callback<Units_response>() {
+            @Override
+            public void onResponse(Call<Units_response> call, Response<Units_response> response) {
+                if (response.isSuccessful()) {
+
+                    if (response.body().getCode().equals("200")) {
+                        GetUnitsView.list_Units(response.body().getData());
+                    } else if (response.body().getCode().equals("905")) {
+                        GetUnitsView.EmptyUnits();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Units_response> call, Throwable t) {
+                GetUnitsView.Error();
+            }
+        });
+    }
+
+
     public void getSearchUnits(String unittypeid, String lang,String Lat,String Lng,String Perpustype
     ,String areasize,String noofroom,String pricefrom,String priceto) {
         HashMap<String, String> hashMap = new HashMap<>();

@@ -59,6 +59,72 @@ public class Book_Unit_Presenter {
         });
     }
 
+    public void bookrentunit(String Unitid,String ClintId,String expectedstartdate,String renttime,String rettimetype) {
+        Map<String, String> queryMap = new HashMap<>();
+
+        queryMap.put("unitid", Unitid);
+        queryMap.put("clientid", ClintId);
+        queryMap.put("expectedstartdate", expectedstartdate);
+        queryMap.put("renttime",renttime);
+        queryMap.put("rettimetype",rettimetype);
+        Apiinterface apiInterface = ApiCLint.getClient().create(Apiinterface.class);
+        Call<BookUnits_Response> call = apiInterface.Book_Rent_Unit(queryMap);
+        call.enqueue(new Callback<BookUnits_Response>() {
+            @Override
+            public void onResponse(Call<BookUnits_Response> call, Response<BookUnits_Response> response) {
+                if(response.isSuccessful()) {
+                    if (response.body().getData().equals("1")) {
+                        bookUnit_view.success();
+                    } else if (response.body().getCode().equals("0")) {
+                        bookUnit_view.Error();
+                    } else {
+                        bookUnit_view.Error();
+                    }
+                }else {
+                    bookUnit_view.Error();
+                }
+            }
+            @Override
+            public void onFailure(Call<BookUnits_Response> call, Throwable t) {
+                bookUnit_view.Error();
+
+            }
+        });
+    }
+
+    public void booksaleunit(String Unitid,String ClintId,String expectedstartdate,String rettimetype) {
+        Map<String, String> queryMap = new HashMap<>();
+
+        queryMap.put("unitid", Unitid);
+        queryMap.put("clientid", ClintId);
+        queryMap.put("expectedcontractdate", expectedstartdate);
+        queryMap.put("paymentmethodtype",rettimetype);
+        Apiinterface apiInterface = ApiCLint.getClient().create(Apiinterface.class);
+        Call<BookUnits_Response> call = apiInterface.Book_Sale_Unit(queryMap);
+        call.enqueue(new Callback<BookUnits_Response>() {
+            @Override
+            public void onResponse(Call<BookUnits_Response> call, Response<BookUnits_Response> response) {
+                if(response.isSuccessful()) {
+                    if (response.body().getData().equals("1")) {
+                        bookUnit_view.success();
+                    } else if (response.body().getCode().equals("0")) {
+                        bookUnit_view.Error();
+                    } else {
+                        bookUnit_view.Error();
+                    }
+                }else {
+                    bookUnit_view.Error();
+                }
+            }
+            @Override
+            public void onFailure(Call<BookUnits_Response> call, Throwable t) {
+                bookUnit_view.Error();
+
+            }
+        });
+    }
+
+
     public void bookshare(String Unitid,String ClintId,String count,String NewPrice) {
         Map<String, String> queryMap = new HashMap<>();
 

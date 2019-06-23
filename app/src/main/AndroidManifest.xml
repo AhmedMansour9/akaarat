@@ -17,9 +17,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:windowSoftInputMode="stateHidden">
-        <activity android:name=".Activity.BookUnit"></activity>
+        <activity android:name=".Activity.Enter_SaleUnit"
+            android:theme="@style/Theme.AppCompat.Dialog"></activity>
+        <activity
+            android:name=".Activity.BookRentUnit"
+            android:theme="@style/Theme.AppCompat.Dialog"></activity>
         <activity android:name=".Activity.Enter_SharesCount" />
-        <activity android:name=".Tenant_Account.Tabs_MalekAccount" />
+        <activity android:name=".Tenant_Account.Tabs_TenentAccount" />
         <activity
             android:name=".Activity.Enter_Bit_Now"
             android:theme="@style/Theme.AppCompat.Dialog" />

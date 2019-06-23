@@ -30,25 +30,78 @@
         </RelativeLayout>
 
     </androidx.appcompat.widget.Toolbar>
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tas"
+    <!--<com.google.android.material.tabs.TabLayout-->
+        <!--android:id="@+id/tas"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/_50sdp"-->
+        <!--android:layout_below="@+id/toolbar"-->
+        <!--android:layout_margin="@dimen/_10sdp"-->
+        <!--android:background="@drawable/bc_tabs"-->
+        <!--app:tabBackground="@drawable/tab_color_selector"-->
+        <!--app:tabMode="fixed"-->
+        <!--app:tabGravity="fill"/>-->
+
+
+    <!--<androidx.viewpager.widget.ViewPager-->
+        <!--android:id="@+id/viewpa"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_below="@+id/tas"-->
+        <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"  />-->
+
+    <RelativeLayout
+        android:id="@+id/rel_rent_reserv_sales"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
-        android:layout_below="@+id/toolbar"
-        android:layout_margin="@dimen/_10sdp"
-        android:background="@drawable/bc_tabs"
-        app:tabBackground="@drawable/tab_color_selector"
-        app:tabMode="fixed"
-        app:tabGravity="fill"/>
+        android:layout_marginStart="@dimen/_6sdp"
+        android:layout_marginEnd="@dimen/_6sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:background="@drawable/rel_rent_sale"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_60sdp">
+        <Button
+            android:id="@+id/btn_rent_reserv_rent"
+            android:layout_width="@dimen/_136sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_alignParentStart="true"
+            android:text="@string/rent"
+            android:background="#0691de"
+            android:textColor="#FFF"
+            />
+        <Button
+            android:id="@+id/btn_rent_reserv_buy"
+            android:layout_width="@dimen/_136sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:layout_marginEnd="@dimen/_6sdp"
+            android:layout_alignParentEnd="true"
+            android:text="@string/buy"
+            android:background="#edf6fc"
+            android:textColor="#0691de"/>
 
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewpa"
+    </RelativeLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_Units"
+        android:layout_below="@+id/rel_rent_reserv_sales"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_6sdp"
+        android:layout_marginEnd="@dimen/_6sdp"
+
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/tas"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
+        android:layout_height="match_parent">
 
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_Units"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
 </RelativeLayout>
