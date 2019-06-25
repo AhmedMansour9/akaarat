@@ -61,7 +61,6 @@ public class RealStates_Office extends Fragment implements ListUnitDetails_View,
     String Unit_Type,Tybe_id;
     GetUnitsTypes_Present getUnitsTypes_present;
     String Lang;
-    String id,phone,name;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -72,7 +71,7 @@ public class RealStates_Office extends Fragment implements ListUnitDetails_View,
         getActivity().getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
         );
-        GetData();
+
         Language();
         init();
         SwipRefresh();
@@ -84,19 +83,9 @@ public class RealStates_Office extends Fragment implements ListUnitDetails_View,
         return view;
     }
 
-    public void GetData(){
-        Bundle bundle=getArguments();
-        if(bundle!=null){
-            name=bundle.getString("name");
-            id=bundle.getString("id");
-            phone=bundle.getString("phone");
-
-        }
-
-    }
     private void init() {
 
-        recyclerView=view.findViewById(R.id.recycler_Units);
+        recyclerView=view.findViewById(R.id.recycler_Unit);
         getUnits_presenter=new GetUnits_Presenter(getContext(),this);
         units_adapter=new Units_Adapter(list_Units,getContext());
         units_adapter.setClickListener(this);
@@ -120,16 +109,16 @@ public class RealStates_Office extends Fragment implements ListUnitDetails_View,
 //                    mSwipeRefreshLayout.setRefreshing(true);
                     PAGE++;
                     if(Language.isRTL()) {
-                        getUnits_presenter.getUnitsOffice("ar", String.valueOf(PAGE),id);
+                        getUnits_presenter.getUnitsOffice("ar", String.valueOf(PAGE),TabsOffice.id);
                     }else {
-                        getUnits_presenter.getUnitsOffice("en", String.valueOf(PAGE),id);
+                        getUnits_presenter.getUnitsOffice("en", String.valueOf(PAGE),TabsOffice.id);
                     }
             }
         });
     }
 
     public void SwipRefresh(){
-        mSwipeRefreshLayout =  view.findViewById(R.id.swipe_Units);
+        mSwipeRefreshLayout =  view.findViewById(R.id.swipe_Unit);
         mSwipeRefreshLayout.setOnRefreshListener(this);
         mSwipeRefreshLayout.setRefreshing(true);
         mSwipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary,
@@ -142,12 +131,10 @@ public class RealStates_Office extends Fragment implements ListUnitDetails_View,
                 list_Units.clear();
                 if(Language.isRTL()) {
                     PAGE = 1;
-                    getUnits_presenter.getUnitsOffice(String.valueOf(PAGE),"ar",id);
-
+                    getUnits_presenter.getUnitsOffice(String.valueOf(PAGE),"en",TabsOffice.id);
                 }else {
                     PAGE = 1;
-                    getUnits_presenter.getUnitsOffice(String.valueOf(PAGE),"en",id);
-
+                    getUnits_presenter.getUnitsOffice(String.valueOf(PAGE), "en",TabsOffice.id);
                 }
             }
         });
@@ -155,10 +142,58 @@ public class RealStates_Office extends Fragment implements ListUnitDetails_View,
 
     @Override
     public void onRefresh() {
-     }
+
+        recycle=true;
+        list_Units.clear();
+        units_adapter.notifyDataSetChanged();
+        PAGE=1;
+        mSwipeRefreshLayout.setRefreshing(true);
+        if(Language.isRTL()) {
+            PAGE = 1;
+            getUnits_presenter.getUnitsOffice(String.valueOf(PAGE), "ar",TabsOffice.id);
+        }else {
+            PAGE = 1;
+            getUnits_presenter.getUnitsOffice(String.valueOf(PAGE), "en",TabsOffice.id);
+        }
+
+    }
 
     @Override
     public void list_Units(List<Units> list) {
+        list_Units.clear();
+        mSwipeRefreshLayout.setRefreshing(false);
+        for (int i=0;i<list.size();i++){
+            units_detail=new Units_Detail();
+            units_detail.setId(list.get(i).getId());
+            units_detail.setDate(list.get(i).getCreatedat());
+            units_detail.setAnnualrent(list.get(i).getAnnualrent());
+            units_detail.setSellingprice(list.get(i).getSellingprice());
+            units_detail.setDefaultimg(list.get(i).getDefaultimg());
+            units_detail.setId(list.get(i).getId());
+            units_detail.setLastbidprice(list.get(i).getLastbidprice());
+            units_detail.setEnablebid(list.get(i).getEnablebid());
+            units_detail.setEnabledivision(list.get(i).getEnabledivision());
+            units_detail.setUnittype(list.get(i).getUnittype());
+            units_detail.setUnitNamear(list.get(i).getUnitNamear());
+            units_detail.setUnitdescription(list.get(i).getUnitdescription());
+            units_detail.setPurposetype(list.get(i).getPurposetype());
+            units_detail.setAreasize(list.get(i).getAreasize());
+            units_detail.setUnittypeid(list.get(i).getUnittypeid());
+            units_detail.setOfficeid(list.get(i).getOfficeid());
+            units_detail.setSellingSharePrice(list.get(i).getSellingSharePrice());
+            units_detail.setLocationdescription(String.valueOf(list.get(i).getLocationdescription()));
+            units_detail.setNumberOfshare(list.get(i).getNumberOfshare());
+            units_detail.setShareAria(list.get(i).getShareAria());
+            units_detail.setCountOfSoldShare(list.get(i).getCountOfSoldShare());
+
+            list_Units.add(units_detail);
+        }
+        if(list_Units.size()>1){
+            units_adapter.notifyItemRangeInserted(units_adapter.getItemCount(), list_Units.size() - 1);
+        }else {
+            units_adapter.notifyDataSetChanged();
+        }
+
 
     }
 
@@ -199,8 +234,18 @@ public class RealStates_Office extends Fragment implements ListUnitDetails_View,
         bundle.putString("countOfSoldShare",String.valueOf(list.getCountOfSoldShare()));
         bundle.putString("numberOfshare",String.valueOf(list.getNumberOfshare()));
         detailsHomeProductFragment.setArguments(bundle);
-        getFragmentManager().beginTransaction().add(R.id.Menu_Frame,detailsHomeProductFragment)
-                .addToBackStack(null).commit();
+
+        if(TabsOffice.From.equals("myaccount")) {
+            getFragmentManager().beginTransaction().add(R.id.Rela_MyAcc, detailsHomeProductFragment)
+                    .addToBackStack(null).commit();
+        }else if(TabsOffice.From.equals("search")){
+            getFragmentManager().beginTransaction().add(R.id.Rela_Search, detailsHomeProductFragment)
+                    .addToBackStack(null).commit();
+        }
+        else if(TabsOffice.From.equals("menu")){
+            getFragmentManager().beginTransaction().add(R.id.Menu_Frame,detailsHomeProductFragment)
+                    .addToBackStack(null).commit();
+        }
     }
 
     public void Language(){

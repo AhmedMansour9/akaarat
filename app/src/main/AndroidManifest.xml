@@ -46,6 +46,7 @@
             android:value="AIzaSyDLTm6i6m_gHKsIUqEdRBDnAMHNgXeNYbM" />
 
         <activity android:name=".Activity.Home_Tabs" />
+        <activity android:name=".Fragments.TabsOffice"/>
 
         <uses-library
             android:name="org.apache.http.legacy"

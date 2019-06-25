@@ -7,14 +7,15 @@
     tools:context=".Fragments.RealStates_Office">
 
 
+
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipe_Units"
+        android:id="@+id/swipe_Unit"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_Units"
+            android:id="@+id/recycler_Unit"
             android:scrollbars="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

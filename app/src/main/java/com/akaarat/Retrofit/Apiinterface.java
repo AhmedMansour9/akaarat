@@ -38,6 +38,10 @@ public interface Apiinterface {
     @GET("getbidunitsBylang")
     Call<Units_response> GetbitUnits(@QueryMap Map<String, String> queryMab);
 
+    @GET("getofficeunitsBylang")
+    Call<Units_response> GetUnitsOffice(@QueryMap Map<String, String> queryMab);
+
+
     @GET("AddUnitClientPrice")
     Call<BookUnits_Response> Book_Unit(@QueryMap Map<String, String> queryMab);
 

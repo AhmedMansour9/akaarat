@@ -291,36 +291,28 @@ public class Details_Units_Fragment extends Fragment implements OfficeProfile_Vi
             RelaOffice.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    Intent intent=new Intent(getActivity(),TabsOffice.class);
                     if(From.equals("myaccount")) {
-                        TabsOffice detailsHomeProductFragment = new TabsOffice();
-                        Bundle bundle = new Bundle();
-                        bundle.putString("id", officeid);
-                        bundle.putString("phone", OfficePhone);
-                        bundle.putString("name", OfficeName);
-
-                        detailsHomeProductFragment.setArguments(bundle);
-                        getFragmentManager().beginTransaction().add(R.id.Rela_MyAcc, detailsHomeProductFragment)
-                                .addToBackStack(null).commit();
+                        intent.putExtra("id", officeid);
+                        intent.putExtra("phone", OfficePhone);
+                        intent.putExtra("name", OfficeName);
+                        intent.putExtra("from",From);
+                        startActivity(intent);
                     }else if(From.equals("search")){
-                        TabsOffice detailsHomeProductFragment = new TabsOffice();
-                        Bundle bundle = new Bundle();
-                        bundle.putString("id", officeid);
-                        bundle.putString("phone", OfficePhone);
-                        bundle.putString("name", OfficeName);
 
-                        detailsHomeProductFragment.setArguments(bundle);
-                        getFragmentManager().beginTransaction().add(R.id.Rela_Search, detailsHomeProductFragment)
-                                .addToBackStack(null).commit();
+                        intent.putExtra("id", officeid);
+                        intent.putExtra("phone", OfficePhone);
+                        intent.putExtra("name", OfficeName);
+                        intent.putExtra("from",From);
+                        startActivity(intent);
                     }
                     else if(From.equals("menu")){
-                        TabsOffice detailsHomeProductFragment = new TabsOffice();
-                        Bundle bundle = new Bundle();
-                        bundle.putString("id", officeid);
-                        bundle.putString("phone", OfficePhone);
-                        bundle.putString("name", OfficeName);
-                        detailsHomeProductFragment.setArguments(bundle);
-                        getFragmentManager().beginTransaction().add(R.id.Menu_Frame , detailsHomeProductFragment)
-                                .addToBackStack(null).commit();
+
+                        intent.putExtra("id", officeid);
+                        intent.putExtra("phone", OfficePhone);
+                        intent.putExtra("name", OfficeName);
+                        intent.putExtra("from",From);
+                        startActivity(intent);
                     }
                 }
             });

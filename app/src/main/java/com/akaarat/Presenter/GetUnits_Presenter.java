@@ -57,10 +57,10 @@ public class GetUnits_Presenter {
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("lang", lang);
         hashMap.put("page", Page);
-        hashMap.put("id",id);
+         hashMap.put("officeid",id);
 
         Apiinterface service = ApiCLint.getClient().create(Apiinterface.class);
-        Call<Units_response> call = service.GetUnits(hashMap);
+        Call<Units_response> call = service.GetUnitsOffice(hashMap);
         call.enqueue(new Callback<Units_response>() {
             @Override
             public void onResponse(Call<Units_response> call, Response<Units_response> response) {

@@ -1,11 +1,15 @@
 package com.akaarat.Fragments;
 
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
@@ -14,6 +18,8 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.akaarat.Language;
 import com.akaarat.R;
@@ -25,7 +31,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TabsOffice extends Fragment {
+public class TabsOffice extends AppCompatActivity {
 
 
     public TabsOffice() {
@@ -35,17 +41,22 @@ public class TabsOffice extends Fragment {
     View view;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+     public static String id,phone,name,From;
+      TextView Title_RealState,Phone;
+      ImageView Phonee;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_details_office, container, false);
-
-        viewPager = view.findViewById(R.id.viewpager);
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_details_office);
+        Title_RealState=findViewById(R.id.Title_RealState);
+        Phonee=findViewById(R.id.Phonee);
+        Phone=findViewById(R.id.Phone);
+        viewPager = findViewById(R.id.viewpager);
         setupViewPager(viewPager);
-        tabLayout = view.findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(viewPager);
+        tabLayout = findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(
+                viewPager);
         tabLayout.setTabTextColors(
                 ColorStateList.valueOf(Color.BLACK));
         if (Language.isRTL()) {
@@ -53,27 +64,44 @@ public class TabsOffice extends Fragment {
         } else {
             tabLayout.getTabAt(0).select();
         }
-
+        GetData();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             tabLayout.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
         }
 
-        return view;
     }
 
+    public void GetData(){
+            name=getIntent().getStringExtra("name");
+            id=getIntent().getStringExtra("id");
+            From=getIntent().getStringExtra("from");
+            phone=getIntent().getStringExtra("phone");
+            Title_RealState.setText(""+name);
+            Phone.setText(""+phone);
+            Phonee.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel",phone, null));
+                    startActivity(intent);
+
+                }
+            });
+
+
+    }
     private void setupViewPager(ViewPager viewPager) {
-        Adapter adapter = new Adapter(getChildFragmentManager());
+        Adapter adapter = new Adapter(getSupportFragmentManager());
 
         if (Language.isRTL()) {
             // The view has RTL layout
-            adapter.addFragment(new About_office(), getResources().getString(R.string.aboutoffice));
+//            adapter.addFragment(new About_office(), getResources().getString(R.string.aboutoffice));
             adapter.addFragment(new RealStates_Office(), getResources().getString(R.string.realstate));
             adapter.addFragment(new Rating_Office(), getResources().getString(R.string.rating));
         } else {
             // The view has LTR layout
             adapter.addFragment(new Rating_Office(), getResources().getString(R.string.rating));
             adapter.addFragment(new RealStates_Office(), getResources().getString(R.string.realstate));
-            adapter.addFragment(new About_office(), getResources().getString(R.string.aboutoffice));
+//            adapter.addFragment(new About_office(), getResources().getString(R.string.aboutoffice));
         }
 
 //        viewPager.setCurrentItem(adapter.getCount() - 1);
